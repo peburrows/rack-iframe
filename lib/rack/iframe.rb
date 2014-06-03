@@ -56,7 +56,7 @@ module Rack
       def user_agent?(id, env)
         case id
         when :ie
-          user_agent(env).include?('MSIE')
+          user_agent(env).include?('MSIE') || user_agent(env).include?('Trident')
         when :safari
           user_agent(env).include?('Safari')
         when :opera
