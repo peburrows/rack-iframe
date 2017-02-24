@@ -18,7 +18,7 @@ module Rack
 
     def call(env)
       # 1) If P3P: Set a random Etag (If-None-Match) to trick backend to not send cached response (304).
-      set_invalid_etag!(env) if set_p3p_header?(env)
+      # set_invalid_etag!(env) if set_p3p_header?(env)
 
       # 2) Request
       if iframe_session_path?(env)
